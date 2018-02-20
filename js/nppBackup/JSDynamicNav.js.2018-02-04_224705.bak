@@ -1,0 +1,22 @@
+// JavaScript Document
+$( document ).ready(function() {
+    
+	nav = new Object();
+	
+	nav.createHRNav=function(obj)
+	{
+		var jsonArr=JSON.parse(obj);
+		var size=jsonArr.length;
+		
+		var i;
+		var link;
+		for(i=0;i<size;i++)
+		{
+				console.log("Title = "+jsonArr[i].title+" , href= "+jsonArr[i].href);
+				links=links+"&nbsp;&nbsp;"+"<a href='jsonArr[i].href'>jsonArr[i].title</a>"; 
+		}
+		
+		$("#container").append(link);
+	}
+	
+});

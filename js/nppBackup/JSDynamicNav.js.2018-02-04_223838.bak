@@ -1,0 +1,17 @@
+// JavaScript Document
+$( document ).ready(function() {
+    
+	nav = new Object();
+	
+	nav.createHRNav=function(obj)
+	{
+		var size=obj.length;
+		
+		var i;
+		for(i=0;i<size;i++)
+		{
+				console.log("Title = "+obj.title+" , href= "+obj.href);
+		}
+	}
+	
+});

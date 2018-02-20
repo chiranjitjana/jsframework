@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/own.css">
+  <script src="../js/jq.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+  <script src="../navHR/navHR.js"></script>
+  <script src="../navHR/controller.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<!--header-->
+<div class="navBar">
+</div>
+
+<div class="conainer">
+  <!--vertical nav-->
+  <div class="verticalNav col-md-2">
+  </div>
+  <!--container-->
+  <div class="contain-container col-md-9">
+
+    <div class="cms">
+      <div class="home hide">
+        <h4>Home</h4>
+      </div>
+      <div class="contactus hide">
+        <h4>Contact</h4>
+      </div>
+      <div class="services hide">
+        <h4>Services</h4>
+      </div>
+      <div class="aboutus hide">
+          <h4>About</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--EMI Calculator-->
+<div class="menu pmd-floating-action" data-toggle="modal" data-target="#emi">
+        <a data-toggle="modal" data-target="#emi" class="js-gitter-toggle-chat-button floating-btn-custon pmd-floating-action-btn btn pmd-btn-fab pmd-btn-raised "  href="javascript:void(0);">
+            <h4>EMI</h4>
+        </a>
+</div>
+
+
+<!-- Modal -->
+<div id="emi" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+             <!-- Modal content-->
+             <div class="modal-content">
+                <div class="modal-header">
+                   <h4 class="modal-title col-md-8">EMI Calculator</h4>
+                   <button type="button" class="close col-md-1" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <div class="form-group">
+                      <label for="usr">Enter Principle Amount:</label>
+                      <input type="number" class="form-control" id="usr">
+                  </div>
+                  <div class="form-group">
+                    <label for="pwd">Enter Anual Interest Rate:</label>
+                    <input type="number" class="form-control" id="pwd">
+                  </div>
+
+
+                  <div class="form-group">
+                      <label for="usr">Emi Period :</label>
+                      <input type="number" class="form-control" id="usr">
+                  </div>
+
+                  <div class="radio">
+                    <label><input type="radio" name="optradio">Monthly Tennur Period</label>
+                  </div>
+                  <div class="radio">
+                    <label><input type="radio" name="optradio">Annual Tennur Period</label>
+                  </div>
+
+                  <div class="form-group">
+                    <center>
+                      <input type="button" class="btn btn-success" value="Calculate EMI">
+                    </center>
+                  </div>
+
+                </div>
+             </div>
+          </div>
+       </div>
+<script>
+	$(document).ready(function()
+	{
+		var links='[{"contentpanel":"Quick Book","title":"Quick Booking","href":"/#","subcat":[{"title":"Customer Details","href":"/customer_form","contentpanel":"customer_details"},{"title":"Product Type","href":"/product_type_form","contentpanel":"product_type_form"}]},{"contentpanel":"cms","title":"CMS","href":"/cms","subcat":[{"title":"Home","href":"/home_page","contentpanel":"home"},{"title":"Contact Us","href":"/contact_us","contentpanel":"contactus"},{"title":"Services","href":"/customer_form","contentpanel":"services"},{"title":"About Us","href":"/aboutus","contentpanel":"aboutus"}]},{"contentpanel":"Inventory","title":"Inventory","href":"/abt"},{"contentpanel":"customer","title":"Customer","href":"/contacts"},{"contentpanel":"notification","title":"Notification","href":"#"},{"contentpanel":"reports","title":"Reports","href":"#"},{"contentpanel":"logout","title":"Logout","href":"#"}]';
+		navBar.make(links,"navBar","verticalNav");
+		navBar.onHRNavClickSubscribe();
+    controller.basicEventHandler();
+    
+	});
+</script>
+
+</body>
+</html>

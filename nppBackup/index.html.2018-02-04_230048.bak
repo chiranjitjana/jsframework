@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="style/nakeup.css">
+<script src="lib/jquery.js"></script>
+<script src="lib/popper.min.js"></script>
+<script src="lib/bootstrap.min.js"></script>
+<script src="js/JSDynamicNav.js"></script>
+</head>
+<body>
+<div id="container">
+</div>
+
+<script>
+$( document ).ready(function() {
+	var json='[{"title": "abc","href": "/abc"},{ "title": "xyz","href": "/xyz"},{"title": "pqr","href": "/pqr"},{ "title": "mno", "href": "/mno" }]';
+	
+    nav.createHRNav(json);
+});
+</script>
+</body>
+</html>

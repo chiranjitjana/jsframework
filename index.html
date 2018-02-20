@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Untitled Document</title>
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="style/makeup.css">
+      <script src="lib/jquery.js"></script>
+      <script src="lib/popper.min.js"></script>
+      <script src="lib/bootstrap.min.js"></script>
+      <script src="js/JSDynamicNav.js"></script>
+   </head>
+   <body>
+      <div id="container">
+         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">EMI Calculate</button>
+         <div id="emi" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+               <!-- Modal content-->
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <h4 class="modal-title">EMI Calculate</h4>
+                     <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <div class="modal-body">
+                     <table>
+                        <tr>
+                           <td>Enter Principle Amount :</td>
+                           <td><input type="number" id="principalAmt"></td>
+                        </tr>
+                        <tr>
+                           <td>Enter Anual Interest Rate :</td>
+                           <td><input type="number" id="interest"></td>
+                        </tr>
+                        <tr>
+                           <td>Select Tennur Period :</td>
+                           <td>
+                              <Select id="periodType">
+                                 <option value="-1">--Select--</option>
+                                 <option value="1">Monthly</option>
+                                 <option value="2">Yearly</option>
+                              </select>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>Emi Period : </td>
+                           <td> <input type="number" id="period"></td>
+                        </tr>
+                        <tr>
+                           <td colspan=2>
+                              <center><button id="cal">Calculate</button></center>
+                           </td>
+                        </tr>
+						<tr>
+							<td><p id="emi"></p>
+						</tr>
+                     </table>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script>
+		$(document).ready(function(){
+
+			$("#cal").on("click",function(){
+				var amt=$("#principalAmt").val();
+				var month_int_rate=$("#interest").val()/12;
+
+				var months;
+
+				if($("#periodType").val()=="1")
+				{
+					months=$("#period").val();
+				}
+				else if($("#periodType").val()=="2")
+				{
+					months=$("#period").val()*12;
+				}
+				else
+				{
+					console.log("Not valid type");
+				}
+
+				var EMI=amt*((month_int_rate*((1+month_int_rate)^months))/(((1+month_int_rate)^months)-1));
+				$("#emi").text("EMI "+EMI);
+				console.log("EMI="+EMI);
+			});
+
+		});
+	  </script>
+   </body>
+</html>

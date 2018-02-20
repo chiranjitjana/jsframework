@@ -1,0 +1,154 @@
+
+
+/*
+  left navigation bar style
+
+*/
+.verticalNav
+{
+  width: 250px;
+}
+
+.vertical-menu {
+    width: 100%; /* Set a width if you like */
+}
+
+.vertical-menu a {
+    background-color: #eee; /* Grey background color */
+    color: black; /* Black text color */
+    display: block; /* Make the links appear below each other */
+    padding: 8px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+	border:none;
+	margin-top:4px;
+}
+
+.vertical-menu a:hover {
+    background-color: #34BD8B; /* Dark grey background on mouse-over */
+	color:#fff;
+}
+
+.vertical-menu a.active {
+    background-color: #4CAF50; /* Add a green color to the "active/current" link */
+    color: white;
+}
+
+
+/*
+  basic style
+
+*/
+
+body
+{
+  background-color: #C7C3C2;
+}
+
+.contain-container
+{
+  height: 550px;
+  width: 80%;
+  background-color: #EAE6E5;
+
+}
+
+
+/*
+  floating button
+*/
+
+.pmd-floating-action {
+    bottom: 0;
+    position: fixed;
+    margin: 1em;
+    right: 0;
+    z-index: 1000;
+}
+
+.btn.pmd-btn-fab {
+    padding: 0;
+    border-radius: 50%;
+}
+
+.floating-btn-custon {
+    background: #43bb82 none repeat scroll 0 0;
+    color: #fff;
+    z-index: 1000;
+}
+
+.pmd-floating-action-btn {
+    display: block;
+    position: relative;
+    transition: all .2s ease-out;
+}
+
+.pmd-btn-fab {
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+}
+
+.pmd-btn-raised {
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.12), 0 1px 2px 0 rgba(0,0,0,.24);
+}
+
+.btn {
+    outline: 0;
+    outline-offset: 0;
+    border: 0;
+    border-radius: 2px;
+    transition: all .15s ease-in-out;
+    -o-transition: all .15s ease-in-out;
+    -moz-transition: all .15s ease-in-out;
+    -webkit-transition: all .15s ease-in-out;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 15px;
+    margin-bottom: 0;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: inherit;
+    color: rgba(255,255,255,.87);
+}
+
+/*
+  EMI modal
+*/
+
+.fade-own {
+     opacity: 1;
+    -webkit-transition: opacity .15s linear;
+    -o-transition: opacity .15s linear;
+    transition: opacity .15s linear;
+    z-index: 1886626;
+}
+
+/*modal style*/
+
+.modal-header
+{
+  background-color: #09C583;
+  color: #F9FAF9;
+}
+
+/*hide element*/
+.hide{
+  display: none;
+}
