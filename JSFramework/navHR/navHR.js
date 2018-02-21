@@ -27,6 +27,7 @@ $(document).ready(function(){
 				var li_item=$("<li></li>");
 				li_item.attr("menuindex","hr"+i);
 				li_item.addClass("hrNav");
+				li_item.attr("contentpanel",json_links[i].contentpanel);
 				var li_item_a=$("<a></a>").text(json_links[i].title);
 				//li_item_a.attr("href",json_links[i].href)
 
@@ -77,12 +78,14 @@ $(document).ready(function(){
 		var verticalNav=$("<div></div>");
 		verticalNav.attr("vermenuindex","ver"+index);
 		verticalNav.addClass("vertical-menu");
+
 		var br=$("<br/>");
 
 		for(var x=0;x<menuJson.length;x++)
 		{
 			var btn = $("<a></a>").text(menuJson[x].title);
 			btn.addClass("btn btn-primary");
+			btn.attr("contentpanel",menuJson[x].contentpanel);
 			verticalNav.append(btn).append(br);
 		}
 		$("."+containerclass).append(verticalNav);
@@ -96,14 +99,56 @@ $(document).ready(function(){
 				$(this).removeClass("active");
 			});
 			$(this).addClass("active");
+
+
 			var hr=$(this).attr("menuindex")
 			$( ".verticalNav .vertical-menu" ).each(function( index ) {
 						$(this).hide();
-						if("hr"+index==hr)
-						$(this).show();
+						if("hr"+index==hr){
+							$(this).show();
+							$(this).children().each(function( index )
+							{
+								if(index==0){
+									$(this).addClass("active");
+									//call the ajax to load the first container item by default
+								}
+
+							});
+						}
+
 			});
+
+			$(".contain-container .childContain").each(function( index ) {
+				$(this).addClass("hide");
+			});
+
+			$("."+$(this).attr("contentpanel")).removeClass("hide");
 		});
 	}
+
+
+
+
+navBar.onVerticalNavBarClickHandler=function(){
+	$(".vertical-menu a").click(function(){
+		$( ".vertical-menu a" ).each(function( index ) {
+						$("."+$(this).attr("contentpanel")).addClass("hide");
+						$(this).removeClass("active");
+		});
+		$("."+$(this).attr("contentpanel")).removeClass("hide");
+		$(this).addClass("active");
+	});
+	navBar.defaultHRselected();
+}
+
+	navBar.defaultHRselected=function(){
+		$( ".vertical-menu a" ).each(function( index ) {
+						if(index==0)
+						$(this).addClass("active");
+		});
+	}
+
+
 
 
 

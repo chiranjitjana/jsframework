@@ -33,6 +33,9 @@
     color: white;
 }
 
+.active{
+  background-color: #34BD8B!important;
+}
 
 /*
   basic style

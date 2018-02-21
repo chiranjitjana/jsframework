@@ -25,20 +25,27 @@
   </div>
   <!--container-->
   <div class="contain-container col-md-9">
-
-    <div class="cms">
-      <div class="home hide">
-        <h4>Home</h4>
-      </div>
-      <div class="contactus hide">
-        <h4>Contact</h4>
-      </div>
-      <div class="services hide">
-        <h4>Services</h4>
-      </div>
-      <div class="aboutus hide">
-          <h4>About</h4>
-      </div>
+    <div class="QB childContain">
+        <div class="customer_details">
+          <h4>Customer Details</h4>
+        </div>
+        <div class="product_type_form hide">
+          <h4>Product Type</h4>
+        </div>
+    </div>
+    <div class="cms hide childContain">
+        <div class="home">
+          <h4>Home</h4>
+        </div>
+        <div class="contactus hide">
+          <h4>Contact</h4>
+        </div>
+        <div class="services hide">
+          <h4>Services</h4>
+        </div>
+        <div class="aboutus hide">
+            <h4>About</h4>
+        </div>
     </div>
   </div>
 </div>
@@ -96,11 +103,12 @@
 <script>
 	$(document).ready(function()
 	{
-		var links='[{"contentpanel":"Quick Book","title":"Quick Booking","href":"/#","subcat":[{"title":"Customer Details","href":"/customer_form","contentpanel":"customer_details"},{"title":"Product Type","href":"/product_type_form","contentpanel":"product_type_form"}]},{"contentpanel":"cms","title":"CMS","href":"/cms","subcat":[{"title":"Home","href":"/home_page","contentpanel":"home"},{"title":"Contact Us","href":"/contact_us","contentpanel":"contactus"},{"title":"Services","href":"/customer_form","contentpanel":"services"},{"title":"About Us","href":"/aboutus","contentpanel":"aboutus"}]},{"contentpanel":"Inventory","title":"Inventory","href":"/abt"},{"contentpanel":"customer","title":"Customer","href":"/contacts"},{"contentpanel":"notification","title":"Notification","href":"#"},{"contentpanel":"reports","title":"Reports","href":"#"},{"contentpanel":"logout","title":"Logout","href":"#"}]';
+		var links='[{"contentpanel":"QB","title":"Quick Booking","href":"/#","subcat":[{"title":"Customer Details","href":"/customer_form","contentpanel":"customer_details"},{"title":"Product Type","href":"/product_type_form","contentpanel":"product_type_form"}]},{"contentpanel":"cms","title":"CMS","href":"/cms","subcat":[{"title":"Home","href":"/home_page","contentpanel":"home"},{"title":"Contact Us","href":"/contact_us","contentpanel":"contactus"},{"title":"Services","href":"/customer_form","contentpanel":"services"},{"title":"About Us","href":"/aboutus","contentpanel":"aboutus"}]},{"contentpanel":"Inventory","title":"Inventory","href":"/abt"},{"contentpanel":"customer","title":"Customer","href":"/contacts"},{"contentpanel":"notification","title":"Notification","href":"#"},{"contentpanel":"reports","title":"Reports","href":"#"},{"contentpanel":"logout","title":"Logout","href":"#"}]';
 		navBar.make(links,"navBar","verticalNav");
 		navBar.onHRNavClickSubscribe();
+    navBar.onVerticalNavBarClickHandler();
     controller.basicEventHandler();
-    
+
 	});
 </script>
 
